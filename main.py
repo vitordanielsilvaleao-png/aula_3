@@ -1,12 +1,14 @@
+from src.projeto.projeto_service import ProjetoService
 from src.usuario.usuario_service import UsuarioService
 
-teste = UsuarioService()
+usuario_service = UsuarioService()
+projeto_service = ProjetoService(usuario_service)
 
-usuario1 = teste.criar_usuario(nome="Vitor", email="vitor@gmail.com", senha=123456)
-usuario2 = teste.criar_usuario(nome="Ana", email= "ana@gmail.com", senha=123456)
+usuario1 = usuario_service.criar_usuario(nome="Vitor", email="vitor@gmail.com", senha=123456)
+usuario2 = usuario_service.criar_usuario(nome="Ana", email= "ana@gmail.com", senha=123456)
 
-teste.listar_usuario()
+usuario_service.listar_usuario()
 
-teste.remover_usuario(2)
+projeto1 = projeto_service.criar_projeto(nome="POO", descricao="Teste", usuario_id=1)
 
-teste.listar_usuario()
+projeto_service.listar_projetos()
