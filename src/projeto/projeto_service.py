@@ -44,3 +44,13 @@ class ProjetoService:
                 return
 
         print("O projeto especificado não está cadastrado!\n")
+
+    #Método para buscar projeto pelo ID
+    def buscar_projeto(self, id):
+
+        for registro_projeto in self.lista_projetos:
+
+            if id == registro_projeto.id:
+                return registro_projeto
+
+        print("O projeto especificado não está cadastrado!\n")
